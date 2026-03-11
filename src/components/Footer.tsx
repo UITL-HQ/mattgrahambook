@@ -34,7 +34,7 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-3 text-white/80">
               Pages
             </h4>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
               {[
                 { href: "/about", label: "About" },
                 { href: "/books", label: "Books" },

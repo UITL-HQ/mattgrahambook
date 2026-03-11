@@ -1,6 +1,5 @@
 import Link from "next/link";
 import BookCard from "@/components/BookCard";
-import MailingListForm from "@/components/MailingListForm";
 import { books } from "@/data/books";
 
 export default function Home() {
@@ -121,19 +120,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mailing list CTA */}
-      <section className="bg-navy text-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
-          <h2 className="font-serif text-3xl font-bold mb-3">
-            Never Miss a Release
-          </h2>
-          <p className="text-white/70 mb-8 max-w-md mx-auto">
-            Join the mailing list for exclusive updates on new books,
-            behind-the-scenes stories, and upcoming events.
-          </p>
-          <MailingListForm />
-        </div>
-      </section>
     </>
   );
 }
