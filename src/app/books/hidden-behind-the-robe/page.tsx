@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     description: book.description,
     type: "book" as "website",
     url: "https://mattgrahambook.com/books/hidden-behind-the-robe",
+    images: [
+      {
+        url: "/images/hidden-behind-the-robe.jpg",
+        width: 800,
+        height: 1200,
+        alt: "Hidden Behind the Robe — book cover",
+      },
+    ],
   },
 };
 

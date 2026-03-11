@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     description: book.description,
     type: "book" as "website",
     url: "https://mattgrahambook.com/books/special-directives",
+    images: [
+      {
+        url: "/images/special-directives-front.jpg",
+        width: 504,
+        height: 843,
+        alt: "Special Directives — book cover",
+      },
+    ],
   },
 };
 

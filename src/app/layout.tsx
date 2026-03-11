@@ -39,6 +39,13 @@ export const metadata: Metadata = {
   creator: "Matt Graham",
   publisher: "Matt Graham",
   metadataBase: new URL("https://mattgrahambook.com"),
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  other: {
+    "theme-color": "#1a2332",
+  },
   robots: {
     index: true,
     follow: true,
