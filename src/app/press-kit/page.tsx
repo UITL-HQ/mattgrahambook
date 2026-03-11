@@ -126,22 +126,26 @@ export default function PressKitPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { label: "Author Headshot", note: "Coming soon" },
-                { label: "Hidden Behind the Robe Cover", note: "Coming soon" },
-                { label: "Special Directives Cover", note: "Coming soon" },
+                { label: "Author Headshot", src: "/images/matt-graham-author.jpg" },
+                { label: "Hidden Behind the Robe Cover", src: "/images/hidden-behind-the-robe.jpg" },
+                { label: "Special Directives Cover", src: "/images/special-directives.jpg" },
               ].map((asset) => (
-                <div
+                <a
                   key={asset.label}
-                  className="bg-cream rounded-xl p-6 border border-border text-center"
+                  href={asset.src}
+                  download
+                  className="bg-cream rounded-xl p-4 border border-border text-center hover:shadow-md transition-shadow block"
                 >
-                  <div className="w-16 h-16 mx-auto mb-3 bg-navy/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-8 h-8 text-navy/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                    </svg>
+                  <div className="aspect-square relative mb-3 rounded-lg overflow-hidden bg-white">
+                    <img
+                      src={asset.src}
+                      alt={asset.label}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-sm font-medium text-navy">{asset.label}</p>
-                  <p className="text-xs text-warm-gray-light mt-1">{asset.note}</p>
-                </div>
+                  <p className="text-xs text-warm-gray-light mt-1">Click to download</p>
+                </a>
               ))}
             </div>
           </div>

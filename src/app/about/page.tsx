@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -32,17 +33,16 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Photo placeholder */}
             <div className="lg:col-span-1">
-              <div className="aspect-[3/4] bg-cream rounded-xl flex items-center justify-center border border-border">
-                <div className="text-center px-6">
-                  <div className="w-24 h-24 mx-auto mb-4 bg-navy/10 rounded-full flex items-center justify-center">
-                    <svg className="w-12 h-12 text-navy/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-warm-gray-light">Author photo coming soon</p>
-                </div>
+              <div className="aspect-[3/4] bg-cream rounded-xl overflow-hidden border border-border relative">
+                <Image
+                  src="/images/matt-graham-author.jpg"
+                  alt="Matt Graham — legal thriller author"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  priority
+                />
               </div>
 
               {/* Quick stats */}

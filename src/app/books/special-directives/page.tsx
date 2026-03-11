@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getBookBySlug } from "@/data/books";
 
@@ -21,19 +22,16 @@ export default function SpecialDirectivesPage() {
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            {/* Book cover placeholder */}
             <div className="lg:col-span-1">
-              <div className="aspect-[2/3] bg-white rounded-xl shadow-lg border border-border flex flex-col items-center justify-center text-center p-8">
-                <span className="font-serif text-3xl font-bold text-navy leading-tight mb-2">
-                  {book.title}
-                </span>
-                <span className="text-warm-gray">{book.subtitle}</span>
-                <span className="mt-4 text-sm text-warm-gray-light">
-                  Matt Graham
-                </span>
-                <span className="mt-2 text-xs text-warm-gray-light">
-                  Book {book.seriesNumber}
-                </span>
+              <div className="aspect-[2/3] bg-white rounded-xl shadow-lg border border-border overflow-hidden relative">
+                <Image
+                  src={book.coverImage}
+                  alt={`${book.title} by Matt Graham — book cover`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  priority
+                />
               </div>
             </div>
 

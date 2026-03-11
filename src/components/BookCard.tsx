@@ -1,20 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Book } from "@/data/books";
 
 export default function BookCard({ book }: { book: Book }) {
   return (
     <div className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="aspect-[2/3] bg-cream flex items-center justify-center p-8">
-        {/* Placeholder for book cover - replace with actual Image when covers are provided */}
-        <div className="w-full h-full bg-navy/5 rounded-lg flex flex-col items-center justify-center text-center p-6">
-          <span className="font-serif text-2xl font-bold text-navy leading-tight mb-2">
-            {book.title}
-          </span>
-          <span className="text-sm text-warm-gray">{book.subtitle}</span>
-          <span className="mt-4 text-xs text-warm-gray-light">
-            Book {book.seriesNumber}
-          </span>
-        </div>
+      <div className="aspect-[2/3] bg-cream relative overflow-hidden">
+        <Image
+          src={book.coverImage}
+          alt={`${book.title} by Matt Graham — book cover`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
       <div className="p-6">
         <h3 className="font-serif text-xl font-bold text-navy mb-1">
