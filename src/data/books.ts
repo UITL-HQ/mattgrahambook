@@ -18,6 +18,31 @@ export interface Book {
 
 export const books: Book[] = [
   {
+    slug: "special-directives",
+    title: "Special Directives",
+    subtitle: "A Courthouse Thriller",
+    seriesName: "The Van Nuys Courthouse Legal Thriller Series",
+    seriesNumber: 2,
+    description:
+      "A progressive District Attorney is elected in Los Angeles with controversial policies about the treatment of juvenile felons. When the DA secures the prison release of a rapist convicted as a juvenile, careers are put on the line and victims are outraged. The supervising judge at the Van Nuys courthouse faces impossible choices about how to address the DA\u2019s directives.",
+    longDescription: `A progressive District Attorney is elected in Los Angeles with controversial policies about the treatment of juvenile felons. When the DA secures the prison release of a rapist convicted as a juvenile, careers are put on the line and victims are outraged. The supervising judge at the Van Nuys courthouse faces impossible choices about how to address the DA's directives.
+
+With careers on the line and victims outraged, the supervising judge at the courthouse faces hard choices about how to address the DA's policies. Special Directives is a gripping exploration of justice, politics, and the human cost of ideological crusades played out in the halls of the Los Angeles County Superior Court.
+
+The second installment in The Van Nuys Courthouse Legal Thriller Series, Special Directives delivers the same insider authenticity and page-turning suspense that made Hidden Behind the Robe a Reader's Favorite award winner.`,
+    coverImage: "/images/special-directives-front.jpg",
+    amazonKindle: "https://www.amazon.com/dp/B0GQXQ4TKH",
+    amazonPaperback: "https://www.amazon.com/Special-Directives-COURTHOUSE-LEGAL-THRILLER/dp/B0GQBY4WY1",
+    amazonAudiobook: "https://www.amazon.com/Special-Directives-Matt-Graham/dp/B0GP1R6XRR",
+    rating: 5.0,
+    ratingCount: "New",
+    releaseDate: "March 2026",
+    accolades: [
+      "#1 New Release on Amazon \u2014 Legal Thrillers",
+      "Five-Star Reviews",
+    ],
+  },
+  {
     slug: "hidden-behind-the-robe",
     title: "Hidden Behind the Robe",
     subtitle: "A Courthouse Thriller",
@@ -40,31 +65,6 @@ Matt Graham's first novel traverses the unexplored inner workings of the raunchy
     accolades: [
       "4.6 Stars on Amazon",
       "2022 Reader\u2019s Favorite Award Winner \u2014 Legal Thriller",
-    ],
-  },
-  {
-    slug: "special-directives",
-    title: "Special Directives",
-    subtitle: "A Courthouse Thriller",
-    seriesName: "The Van Nuys Courthouse Legal Thriller Series",
-    seriesNumber: 2,
-    description:
-      "A progressive District Attorney is elected in Los Angeles with controversial policies about the treatment of juvenile felons. When the DA secures the prison release of a rapist convicted as a juvenile, careers are put on the line and victims are outraged. The supervising judge at the Van Nuys courthouse faces impossible choices about how to address the DA\u2019s directives.",
-    longDescription: `A progressive District Attorney is elected in Los Angeles with controversial policies about the treatment of juvenile felons. When the DA secures the prison release of a rapist convicted as a juvenile, careers are put on the line and victims are outraged. The supervising judge at the Van Nuys courthouse faces impossible choices about how to address the DA's directives.
-
-With careers on the line and victims outraged, the supervising judge at the courthouse faces hard choices about how to address the DA's policies. Special Directives is a gripping exploration of justice, politics, and the human cost of ideological crusades played out in the halls of the Los Angeles County Superior Court.
-
-The second installment in The Van Nuys Courthouse Legal Thriller Series, Special Directives delivers the same insider authenticity and page-turning suspense that made Hidden Behind the Robe a Reader's Favorite award winner.`,
-    coverImage: "/images/special-directives-front.jpg",
-    amazonKindle: "https://www.amazon.com/stores/author/B09PJVZ2VZ",
-    amazonPaperback: "https://www.amazon.com/stores/author/B09PJVZ2VZ",
-    amazonAudiobook: "https://www.amazon.com/stores/author/B09PJVZ2VZ",
-    rating: 5.0,
-    ratingCount: "New",
-    releaseDate: "March 2026",
-    accolades: [
-      "#1 New Release on Amazon \u2014 Legal Thrillers",
-      "Five-Star Reviews",
     ],
   },
 ];

@@ -68,7 +68,23 @@ export default function SpecialDirectivesPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 bg-navy hover:bg-navy-light text-white font-medium rounded-lg transition-colors text-sm"
                 >
-                  Buy on Amazon
+                  Kindle Edition
+                </a>
+                <a
+                  href={book.amazonPaperback}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 border border-navy text-navy hover:bg-navy hover:text-white font-medium rounded-lg transition-colors text-sm"
+                >
+                  Paperback
+                </a>
+                <a
+                  href={book.amazonAudiobook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 border border-navy text-navy hover:bg-navy hover:text-white font-medium rounded-lg transition-colors text-sm"
+                >
+                  Audiobook
                 </a>
               </div>
             </div>
