@@ -55,7 +55,7 @@ Matt Graham's first novel traverses the unexplored inner workings of the raunchy
 With careers on the line and victims outraged, the supervising judge at the courthouse faces hard choices about how to address the DA's policies. Special Directives is a gripping exploration of justice, politics, and the human cost of ideological crusades played out in the halls of the Los Angeles County Superior Court.
 
 The second installment in The Van Nuys Courthouse Legal Thriller Series, Special Directives delivers the same insider authenticity and page-turning suspense that made Hidden Behind the Robe a Reader's Favorite award winner.`,
-    coverImage: "/images/special-directives.jpg",
+    coverImage: "/images/special-directives-front.jpg",
     amazonKindle: "https://www.amazon.com/stores/author/B09PJVZ2VZ",
     amazonPaperback: "https://www.amazon.com/stores/author/B09PJVZ2VZ",
     amazonAudiobook: "https://www.amazon.com/stores/author/B09PJVZ2VZ",
