@@ -5,6 +5,23 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Matt Graham. For press inquiries, reader questions, speaking engagements, and general correspondence.",
+  openGraph: {
+    title: "Contact Matt Graham — Legal Thriller Author",
+    description:
+      "Press inquiries, reader questions, speaking engagements, and general correspondence.",
+    url: "https://mattgrahambook.com/contact",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Matt Graham — Legal Thriller Author",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://mattgrahambook.com/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -92,6 +109,55 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* ContactPoint structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Matt Graham",
+            url: "https://mattgrahambook.com",
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "reader inquiries",
+              url: "https://mattgrahambook.com/contact",
+              availableLanguage: "English",
+            },
+            sameAs: [
+              "https://www.facebook.com/mattgrahambooks",
+              "https://www.instagram.com/mattgrahambooks",
+              "https://www.amazon.com/stores/author/B09PJVZ2VZ",
+            ],
+          }),
+        }}
+      />
+
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Contact",
+                item: "https://mattgrahambook.com/contact",
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

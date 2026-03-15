@@ -22,6 +22,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://mattgrahambook.com/books/hidden-behind-the-robe",
+  },
 };
 
 export default function HiddenBehindTheRobePage() {
@@ -135,6 +138,12 @@ export default function HiddenBehindTheRobePage() {
             isbn: "9798792077287",
             numberOfPages: 300,
             genre: "Legal Thriller",
+            inLanguage: "en",
+            publisher: {
+              "@type": "Organization",
+              name: "Self-Published",
+            },
+            datePublished: "2022",
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: book.rating,
@@ -142,6 +151,41 @@ export default function HiddenBehindTheRobePage() {
               ratingCount: 100,
             },
             award: "2022 Reader's Favorite Award — Legal Thriller",
+            isPartOf: {
+              "@type": "BookSeries",
+              name: "The Van Nuys Courthouse Legal Thriller Series",
+              position: "1",
+            },
+          }),
+        }}
+      />
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Books",
+                item: "https://mattgrahambook.com/books",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Hidden Behind the Robe",
+                item: "https://mattgrahambook.com/books/hidden-behind-the-robe",
+              },
+            ],
           }),
         }}
       />

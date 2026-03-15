@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   title: "About Matt Graham",
   description:
     "Matt Graham is a former California judge and prosecutor turned bestselling legal thriller author. Learn about his 43-year legal career and The Van Nuys Courthouse Legal Thriller Series.",
+  openGraph: {
+    title: "About Matt Graham — Legal Thriller Author",
+    description:
+      "Former California judge and prosecutor with 43 years of courtroom experience. Now a bestselling legal thriller author.",
+    url: "https://mattgrahambook.com/about",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Matt Graham — Legal Thriller Author",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://mattgrahambook.com/about",
+  },
 };
 
 export default function AboutPage() {
@@ -140,6 +157,31 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
+
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "About",
+                item: "https://mattgrahambook.com/about",
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

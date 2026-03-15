@@ -22,6 +22,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://mattgrahambook.com/books/special-directives",
+  },
 };
 
 export default function SpecialDirectivesPage() {
@@ -132,8 +135,57 @@ export default function SpecialDirectivesPage() {
             description: book.description,
             url: "https://mattgrahambook.com/books/special-directives",
             bookFormat: "https://schema.org/EBook",
+            isbn: "B0GQBY4WY1",
+            numberOfPages: 280,
             genre: "Legal Thriller",
+            inLanguage: "en",
+            publisher: {
+              "@type": "Organization",
+              name: "Self-Published",
+            },
             datePublished: "2026-03-04",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: book.rating,
+              bestRating: 5,
+              ratingCount: 15,
+            },
+            award: "#1 Amazon New Release — Legal Thrillers",
+            isPartOf: {
+              "@type": "BookSeries",
+              name: "The Van Nuys Courthouse Legal Thriller Series",
+              position: "2",
+            },
+          }),
+        }}
+      />
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Books",
+                item: "https://mattgrahambook.com/books",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Special Directives",
+                item: "https://mattgrahambook.com/books/special-directives",
+              },
+            ],
           }),
         }}
       />

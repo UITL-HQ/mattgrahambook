@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { posts } from "@/data/posts";
+import { posts, Post } from "@/data/posts";
 
 export const metadata: Metadata = {
   title: "Updates",
   description:
     "Latest news, book releases, and updates from legal thriller author Matt Graham.",
+  openGraph: {
+    title: "Updates — Matt Graham, Legal Thriller Author",
+    description:
+      "Latest news, book releases, awards, and behind-the-scenes updates from Matt Graham.",
+    url: "https://mattgrahambook.com/updates",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Matt Graham — Legal Thriller Author",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://mattgrahambook.com/updates",
+  },
 };
 
 export default function UpdatesPage() {
@@ -84,6 +101,62 @@ export default function UpdatesPage() {
           </Link>
         </div>
       </section>
+
+      {/* BlogPosting structured data for each post */}
+      {posts.map((post: Post) => (
+        <script
+          key={post.slug}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.excerpt,
+              datePublished: post.date,
+              author: {
+                "@type": "Person",
+                name: "Matt Graham",
+                url: "https://mattgrahambook.com",
+              },
+              publisher: {
+                "@type": "Person",
+                name: "Matt Graham",
+                url: "https://mattgrahambook.com",
+              },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `https://mattgrahambook.com/updates#${post.slug}`,
+              },
+            }),
+          }}
+        />
+      ))}
+
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Updates",
+                item: "https://mattgrahambook.com/updates",
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

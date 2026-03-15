@@ -4,6 +4,23 @@ export const metadata: Metadata = {
   title: "Press Kit",
   description:
     "Press kit for Matt Graham, bestselling legal thriller author. Download author photos, book covers, and bio for media inquiries.",
+  openGraph: {
+    title: "Press Kit — Matt Graham, Legal Thriller Author",
+    description:
+      "Download author photos, book covers, and bios for interviews, features, and reviews.",
+    url: "https://mattgrahambook.com/press-kit",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Matt Graham — Legal Thriller Author",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://mattgrahambook.com/press-kit",
+  },
 };
 
 export default function PressKitPage() {
@@ -168,6 +185,31 @@ export default function PressKitPage() {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Press Kit",
+                item: "https://mattgrahambook.com/press-kit",
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

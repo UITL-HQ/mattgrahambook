@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   title: "Books",
   description:
     "Explore The Van Nuys Courthouse Legal Thriller Series by Matt Graham. Award-winning courtroom thrillers from a former California judge.",
+  openGraph: {
+    title: "Books by Matt Graham — The Van Nuys Courthouse Legal Thriller Series",
+    description:
+      "Award-winning courtroom thrillers from a former California judge. Hidden Behind the Robe and Special Directives.",
+    url: "https://mattgrahambook.com/books",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Matt Graham — Legal Thriller Author",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://mattgrahambook.com/books",
+  },
 };
 
 export default function BooksPage() {
@@ -39,6 +56,50 @@ export default function BooksPage() {
           </div>
         </div>
       </section>
+
+      {/* ItemList structured data for book listing */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "The Van Nuys Courthouse Legal Thriller Series",
+            numberOfItems: books.length,
+            itemListElement: books.map((book, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              url: `https://mattgrahambook.com/books/${book.slug}`,
+              name: book.title,
+            })),
+          }),
+        }}
+      />
+
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://mattgrahambook.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Books",
+                item: "https://mattgrahambook.com/books",
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

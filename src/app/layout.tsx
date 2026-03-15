@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     "judge author",
     "California courts",
     "bestselling author",
+    "Los Angeles author",
+    "San Fernando Valley",
   ],
   authors: [{ name: "Matt Graham" }],
   creator: "Matt Graham",
@@ -45,6 +47,8 @@ export const metadata: Metadata = {
   },
   other: {
     "theme-color": "#1a2332",
+    "geo.region": "US-CA",
+    "geo.placename": "Van Nuys, Los Angeles",
   },
   robots: {
     index: true,
@@ -103,8 +107,28 @@ export default function RootLayout({
               name: "Matt Graham",
               url: "https://mattgrahambook.com",
               description:
-                "Bestselling legal thriller author and former California judge and prosecutor.",
+                "Bestselling legal thriller author and former California judge and prosecutor with 43 years of courtroom experience in Los Angeles County.",
               jobTitle: "Author",
+              homeLocation: {
+                "@type": "Place",
+                name: "San Fernando Valley, Los Angeles, California",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Los Angeles",
+                  addressRegion: "CA",
+                  addressCountry: "US",
+                },
+              },
+              alumniOf: [
+                {
+                  "@type": "CollegeOrUniversity",
+                  name: "California State University, Northridge",
+                },
+                {
+                  "@type": "CollegeOrUniversity",
+                  name: "Loyola Law School",
+                },
+              ],
               sameAs: [
                 "https://www.facebook.com/mattgrahambooks",
                 "https://www.instagram.com/mattgrahambooks",
@@ -115,6 +139,8 @@ export default function RootLayout({
                 "Legal Thrillers",
                 "Criminal Law",
                 "California Courts",
+                "Los Angeles County Superior Court",
+                "California Court of Appeal",
               ],
             }),
           }}
@@ -129,6 +155,28 @@ export default function RootLayout({
               url: "https://mattgrahambook.com",
               description:
                 "Official website of Matt Graham, bestselling legal thriller author.",
+              potentialAction: {
+                "@type": "ReadAction",
+                target: "https://mattgrahambook.com/books",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BookSeries",
+              name: "The Van Nuys Courthouse Legal Thriller Series",
+              author: {
+                "@type": "Person",
+                name: "Matt Graham",
+                url: "https://mattgrahambook.com",
+              },
+              url: "https://mattgrahambook.com/books",
+              genre: "Legal Thriller",
+              numberOfBooks: 2,
             }),
           }}
         />
@@ -136,8 +184,14 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${sourceSans.variable} antialiased bg-background text-foreground`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-navy focus:text-white focus:rounded-lg"
+        >
+          Skip to main content
+        </a>
         <Navigation />
-        <main className="pt-[73px]">{children}</main>
+        <main id="main-content" className="pt-[73px]">{children}</main>
         <Footer />
       </body>
     </html>
