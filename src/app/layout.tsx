@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lora, Source_Sans_3 } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const lora = Lora({
@@ -193,6 +194,7 @@ export default function RootLayout({
         <Navigation />
         <main id="main-content" className="pt-[73px]">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
