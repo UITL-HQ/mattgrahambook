@@ -55,7 +55,7 @@ export default function ReadingOrderPage() {
         <ol className="mx-auto max-w-4xl px-6 py-16 space-y-12">
           {ordered.map((book) => (
             <li key={book.slug} className="grid grid-cols-1 sm:grid-cols-4 gap-6 items-start">
-              <div className="sm:col-span-1 aspect-[2/3] relative rounded-lg overflow-hidden border border-border shadow">
+              <div className="w-full max-w-[200px] mx-auto sm:max-w-none sm:col-span-1 aspect-[2/3] relative rounded-lg overflow-hidden border border-border shadow">
                 <Image
                   src={book.coverImage}
                   alt={`${book.title} by Matt Graham — book cover`}
