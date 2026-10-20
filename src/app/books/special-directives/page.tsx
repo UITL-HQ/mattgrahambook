@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getBookBySlug } from "@/data/books";
+import { AUTHOR_ID, SERIES_ID } from "@/data/author";
 
 const book = getBookBySlug("special-directives")!;
 
@@ -127,15 +128,10 @@ export default function SpecialDirectivesPage() {
             "@context": "https://schema.org",
             "@type": "Book",
             name: book.title,
-            author: {
-              "@type": "Person",
-              name: "Matt Graham",
-              url: "https://mattgrahambook.com",
-            },
+            author: { "@id": AUTHOR_ID },
             description: book.description,
             url: "https://mattgrahambook.com/books/special-directives",
             bookFormat: "https://schema.org/EBook",
-            isbn: "B0GQBY4WY1",
             numberOfPages: 280,
             genre: "Legal Thriller",
             inLanguage: "en",
@@ -144,15 +140,9 @@ export default function SpecialDirectivesPage() {
               name: "Self-Published",
             },
             datePublished: "2026-03-04",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: book.rating,
-              bestRating: 5,
-              ratingCount: 15,
-            },
-            award: "#1 Amazon New Release — Legal Thrillers",
             isPartOf: {
               "@type": "BookSeries",
+              "@id": SERIES_ID,
               name: "The Van Nuys Courthouse Legal Thriller Series",
               position: "2",
             },

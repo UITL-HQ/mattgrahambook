@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getBookBySlug } from "@/data/books";
+import { AUTHOR_ID, SERIES_ID } from "@/data/author";
 
 const book = getBookBySlug("hidden-behind-the-robe")!;
 
@@ -127,11 +128,7 @@ export default function HiddenBehindTheRobePage() {
             "@context": "https://schema.org",
             "@type": "Book",
             name: book.title,
-            author: {
-              "@type": "Person",
-              name: "Matt Graham",
-              url: "https://mattgrahambook.com",
-            },
+            author: { "@id": AUTHOR_ID },
             description: book.description,
             url: "https://mattgrahambook.com/books/hidden-behind-the-robe",
             bookFormat: "https://schema.org/EBook",
@@ -144,15 +141,10 @@ export default function HiddenBehindTheRobePage() {
               name: "Self-Published",
             },
             datePublished: "2022",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: book.rating,
-              bestRating: 5,
-              ratingCount: 100,
-            },
             award: "2022 Reader's Favorite Award — Legal Thriller",
             isPartOf: {
               "@type": "BookSeries",
+              "@id": SERIES_ID,
               name: "The Van Nuys Courthouse Legal Thriller Series",
               position: "1",
             },

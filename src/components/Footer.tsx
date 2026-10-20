@@ -38,6 +38,8 @@ export default function Footer() {
               {[
                 { href: "/about", label: "About" },
                 { href: "/books", label: "Books" },
+                { href: "/books/reading-order", label: "Reading Order" },
+                { href: "/faq", label: "Reader Questions" },
                 { href: "/updates", label: "Updates" },
                 { href: "/press-kit", label: "Press Kit" },
                 { href: "/contact", label: "Contact" },

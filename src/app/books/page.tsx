@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import BookCard from "@/components/BookCard";
 import { books } from "@/data/books";
 
@@ -42,6 +43,11 @@ export default function BooksPage() {
               think. Each novel draws from real courtroom experience to deliver
               insider authenticity that only a judge who has seen it all could
               write.
+            </p>
+            <p className="mt-6">
+              <Link href="/books/reading-order" className="text-navy font-medium underline underline-offset-4 hover:text-gold">
+                See the series in reading order
+              </Link>
             </p>
           </div>
         </div>

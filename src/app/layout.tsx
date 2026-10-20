@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { AUTHOR_ID, SERIES_ID, AUTHOR_SAME_AS } from "@/data/author";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -105,11 +106,16 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
+              "@id": AUTHOR_ID,
               name: "Matt Graham",
               url: "https://mattgrahambook.com",
               description:
                 "Bestselling legal thriller author and former California judge and prosecutor with 43 years of courtroom experience in Los Angeles County.",
-              jobTitle: "Author",
+              jobTitle: "Novelist",
+              hasOccupation: [
+                { "@type": "Occupation", name: "Novelist" },
+                { "@type": "Occupation", name: "Judge (retired)" },
+              ],
               homeLocation: {
                 "@type": "Place",
                 name: "San Fernando Valley, Los Angeles, California",
@@ -130,12 +136,7 @@ export default function RootLayout({
                   name: "Loyola Law School",
                 },
               ],
-              sameAs: [
-                "https://www.facebook.com/mattgrahambooks",
-                "https://www.instagram.com/mattgrahambooks",
-                "https://www.amazon.com/stores/author/B09PJVZ2VZ",
-                "https://www.audible.com/author/Matt-Graham/B09PJVZ2VZ",
-              ],
+              sameAs: AUTHOR_SAME_AS,
               knowsAbout: [
                 "Legal Thrillers",
                 "Criminal Law",
@@ -169,12 +170,23 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BookSeries",
+              "@id": SERIES_ID,
               name: "The Van Nuys Courthouse Legal Thriller Series",
-              author: {
-                "@type": "Person",
-                name: "Matt Graham",
-                url: "https://mattgrahambook.com",
-              },
+              author: { "@id": AUTHOR_ID },
+              hasPart: [
+                {
+                  "@type": "Book",
+                  name: "Hidden Behind the Robe",
+                  position: 1,
+                  url: "https://mattgrahambook.com/books/hidden-behind-the-robe",
+                },
+                {
+                  "@type": "Book",
+                  name: "Special Directives",
+                  position: 2,
+                  url: "https://mattgrahambook.com/books/special-directives",
+                },
+              ],
               url: "https://mattgrahambook.com/books",
               genre: "Legal Thriller",
               numberOfBooks: 2,
